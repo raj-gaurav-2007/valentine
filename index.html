@@ -3,15 +3,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const noBtn = document.getElementById("no");
   const message = document.getElementById("message");
 
+  // YES button
   yesBtn.addEventListener("click", () => {
     message.classList.remove("hidden");
     yesBtn.style.display = "none";
     noBtn.style.display = "none";
   });
 
-  noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * 300 - 150;
-    const y = Math.random() * 300 - 150;
+  // Function to move NO button
+  function moveNoButton() {
+    const x = Math.random() * 250 - 125;
+    const y = Math.random() * 120 - 60;
     noBtn.style.transform = `translate(${x}px, ${y}px)`;
-  });
+  }
+
+  // Desktop
+  noBtn.addEventListener("mouseover", moveNoButton);
+
+  // Mobile
+  noBtn.addEventListener("touchstart", moveNoButton);
 });
