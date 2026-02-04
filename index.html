@@ -1,67 +1,30 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-  height: 100vh;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+<div class="container">
+  <h1>Hey cutie ❤️</h1>
+  <p class="name">Dear Sujata 🌸</p>
+  <h2>Will you be my Valentine?</h2>
 
-.container {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
+  <div class="buttons">
+    <button id="yes">Yes 💖</button>
+    <button id="no">No 🙃</button>
+  </div>
 
-h1 {
-  color: #ff4d6d;
-  margin-bottom: 10px;
-}
+  <div id="message" class="hidden">
+    <h2>Yayyy!! 🥹❤️</h2>
+    <p>You just made my day 💕</p>
+    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+  </div>
+</div>
 
-.name {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.buttons {
-  margin-top: 20px;
-  position: relative;
-}
-
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-#yes {
-  background: #ff4d6d;
-  color: white;
-  margin-right: 10px;
-}
-
-#no {
-  background: #ddd;
-  position: absolute;
-}
-
-#message img {
-  width: 200px;
-  margin-top: 10px;
-}
-
-.hidden {
-  display: none;
-}
+<script src="script.js"></script>
+</body>
+</html>
