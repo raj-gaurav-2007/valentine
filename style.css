@@ -1,23 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-  const yesBtn = document.getElementById("yes");
-  const noBtn = document.getElementById("no");
-  const message = document.getElementById("message");
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
 
-  yesBtn.addEventListener("click", () => {
-    message.classList.remove("hidden");
-    yesBtn.style.display = "none";
-    noBtn.style.display = "none";
-  });
+.container {
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
 
-  function moveNo() {
-    const x = Math.random() * 80 + "%";
-    const y = Math.random() * 80 + "%";
-    noBtn.style.position = "absolute";
-    noBtn.style.left = x;
-    noBtn.style.top = y;
-  }
+h1 {
+  margin-bottom: 20px;
+}
 
-  noBtn.addEventListener("mouseover", moveNo);
-  noBtn.addEventListener("touchstart", moveNo);
-});
+.buttons {
+  margin-top: 20px;
+  position: relative;
+  height: 60px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#yes {
+  background-color: #ff4d6d;
+  color: white;
+}
+
+#no {
+  background-color: #ccc;
+  position: absolute;
+  left: 120px;
+}
+
+.hidden {
+  display: none;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #ff4d6d;
+}
