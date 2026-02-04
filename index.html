@@ -3,25 +3,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const noBtn = document.getElementById("no");
   const message = document.getElementById("message");
 
-  // YES button
   yesBtn.addEventListener("click", () => {
     message.classList.remove("hidden");
     yesBtn.style.display = "none";
     noBtn.style.display = "none";
   });
 
-  // Function to move NO button
-  function moveNoButton() {
-    const x = Math.random() * 250 - 125;
-    const y = Math.random() * 120 - 60;
-    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  function moveNo() {
+    const x = Math.random() * 80 + "%";
+    const y = Math.random() * 80 + "%";
+    noBtn.style.position = "absolute";
+    noBtn.style.left = x;
+    noBtn.style.top = y;
   }
 
-  // Desktop
-  noBtn.addEventListener("mouseover", moveNoButton);
-
-  // Mobile
-  noBtn.addEventListener("touchstart", moveNoButton);
+  noBtn.addEventListener("mouseover", moveNo);
+  noBtn.addEventListener("touchstart", moveNo);
 });
-alert("JS connected 💖");
-
