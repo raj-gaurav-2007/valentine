@@ -1,23 +1,14 @@
+const yes = document.getElementById("yes");
+const no = document.getElementById("no");
+const message = document.getElementById("message");
 
-document.addEventListener("DOMContentLoaded", () => {
-  const yesBtn = document.getElementById("yes");
-  const noBtn = document.getElementById("no");
-  const message = document.getElementById("message");
+yes.addEventListener("click", () => {
+  message.classList.remove("hidden");
+});
 
-  yesBtn.addEventListener("click", () => {
-    message.classList.remove("hidden");
-    yesBtn.style.display = "none";
-    noBtn.style.display = "none";
-  });
+no.addEventListener("mouseover", () => {
+  const x = Math.random() * 200;
+  const y = Math.random() * 50;
 
-  function moveNo() {
-    const x = Math.random() * 80 + "%";
-    const y = Math.random() * 80 + "%";
-    noBtn.style.position = "absolute";
-    noBtn.style.left = x;
-    noBtn.style.top = y;
-  }
-
-  noBtn.addEventListener("mouseover", moveNo);
-  noBtn.addEventListener("touchstart", moveNo);
+  no.style.transform = `translate(${x}px, ${y}px)`;
 });
