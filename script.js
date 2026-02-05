@@ -1,12 +1,15 @@
 const yes = document.getElementById("yes");
 const no = document.getElementById("no");
-const message = document.getElementById("message");
+const main = document.getElementById("main");
+const celebration = document.getElementById("celebration");
+const music = document.getElementById("music");
 
 yes.addEventListener("click", () => {
-  message.classList.remove("hidden");
-  yes.style.display = "none";
-  no.style.display = "none";
-  createHearts();
+  main.classList.add("hidden");        // 👈 sab hatt jaayega
+  celebration.classList.remove("hidden");
+  music.play();
+  hearts();
+  confetti();
 });
 
 // PC
@@ -19,35 +22,48 @@ no.addEventListener("touchstart", (e) => {
 });
 
 function moveNo() {
-  const x = Math.random() * 70;
-  const y = Math.random() * 60;
-  no.style.left = x + "%";
-  no.style.top = y + "%";
+  no.style.left = Math.random() * 70 + "%";
+  no.style.top = Math.random() * 60 + "%";
 }
 
-// ❤️ Floating hearts animation
-function createHearts() {
-  for (let i = 0; i < 20; i++) {
+// ❤️ Floating hearts
+function hearts() {
+  for (let i = 0; i < 25; i++) {
     const heart = document.createElement("div");
     heart.innerHTML = "❤️";
     heart.style.position = "fixed";
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.bottom = "-20px";
     heart.style.fontSize = "24px";
-    heart.style.animation = "floatUp 3s linear";
+    heart.style.animation = "float 3s linear";
     document.body.appendChild(heart);
-
     setTimeout(() => heart.remove(), 3000);
   }
 }
 
-// Inject animation
+// 🎉 Confetti
+function confetti() {
+  for (let i = 0; i < 30; i++) {
+    const c = document.createElement("div");
+    c.style.position = "fixed";
+    c.style.top = "-10px";
+    c.style.left = Math.random() * 100 + "vw";
+    c.style.width = "10px";
+    c.style.height = "10px";
+    c.style.background = ["#ff4d6d","#ffb703","#8ecae6"][Math.floor(Math.random()*3)];
+    c.style.animation = "fall 3s linear";
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 3000);
+  }
+}
+
+// animations
 const style = document.createElement("style");
 style.innerHTML = `
-@keyframes floatUp {
-  to {
-    transform: translateY(-100vh);
-    opacity: 0;
-  }
+@keyframes float {
+  to { transform: translateY(-100vh); opacity: 0; }
+}
+@keyframes fall {
+  to { transform: translateY(100vh) rotate(360deg); }
 }`;
 document.head.appendChild(style);
