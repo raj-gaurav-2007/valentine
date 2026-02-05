@@ -8,24 +8,26 @@
 </head>
 <body>
 
-<audio id="music" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" loop></audio>
+<div class="container">
+  <h1>Hey cutie ❤️</h1>
 
-<div class="container" id="main">
-  <h1 class="fade">Will you be my Valentine? 💘</h1>
-  <p class="name fade-delay">Dear Sujata 🌸</p>
+  <!-- IMPORTANT: id="question" MUST -->
+  <h2 id="question">Will you be my Valentine dear Sujata? 💘</h2>
 
   <div class="buttons">
     <button id="yes">Yes 💖</button>
     <button id="no">No 🙃</button>
   </div>
+
+  <!-- hidden message -->
+  <div id="message" style="display:none;">
+    <h2>Yayyy!! 🥹❤️</h2>
+    <p>You just made my day 💕</p>
+    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+  </div>
 </div>
 
-<div id="celebration" class="hidden">
-  <h1>YAYYY!! 🥹❤️</h1>
-  <p>You just made my day 💕</p>
-  <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
-</div>
-
+<!-- SCRIPT MUST BE LAST -->
 <script src="script.js"></script>
 </body>
 </html>
